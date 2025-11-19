@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 2000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,10 +129,10 @@ TextureImporter:
       name: PISO_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 69
-        width: 1862
-        height: 1862
+        x: 0
+        y: 1334
+        width: 666
+        height: 666
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,11 +147,187 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PISO_1
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1334
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f9c60476372fa48815d60355db4ca4
+      internalID: -1321635533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISO_2
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1334
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad2b3a49d3c055409853a9fd48a2843
+      internalID: 1849618743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISO_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 668
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14bf2a9f3960c3c438b398ac4a890788
+      internalID: -1455998811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISO_4
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 668
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad58c97f1f676f47a0938f350e2e6a7
+      internalID: 88382925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISO_5
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 668
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91212dbff2b27e3429321295516ecc48
+      internalID: -1274213979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISO_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856563b1d0fcebe4cb3e29f6535e570e
+      internalID: 677623772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISO_7
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 2
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78badcc6aabee747833ced7a603bd37
+      internalID: -1091832883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PISO_8
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 2
+        width: 666
+        height: 666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e720318eab70654cac88f7d915f9ef5
+      internalID: -649977258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2932ded262eb34b4e9193365011ff204
     internalID: 0
     vertices: []
     indices: 
@@ -162,6 +338,14 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       PISO_0: -1385103373088471681
+      PISO_1: -1321635533
+      PISO_2: 1849618743
+      PISO_3: -1455998811
+      PISO_4: 88382925
+      PISO_5: -1274213979
+      PISO_6: 677623772
+      PISO_7: -1091832883
+      PISO_8: -649977258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
