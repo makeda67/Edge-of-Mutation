@@ -1,96 +1,198 @@
-using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class PlayerStateMachine2D : MonoBehaviour
 {
-    public float speed = 5;
-    private Rigidbody2D rb2D; 
-
-    private float move;
-
-    public float jumpForce = 4;
-    private bool isGrounded;
-    public Transform groundCheck;
-    public float groundRadius = 0.1f;
-    public LayerMask groundLayer;
-
-    private Animator animator;
-
-    private int coins;
-    public TMP_Text textCoins;
-
-    void Start()
+    private enum State
     {
-      rb2D = GetComponent<Rigidbody2D>();
-      animator = GetComponent<Animator>();
+        Idle,
+        Walking,
+        Jumping,
+        Knockback
     }
 
-    // Update is called once per frame
+    [Header("Movement")]
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float jumpForce = 4f;
 
-    //Movimiento del player
-    void Update()
+    [Header("Ground Check")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundRadius = 0.1f;
+    [SerializeField] private LayerMask groundLayer;
+
+    [Header("Coins")]
+    [SerializeField] private TMP_Text textCoins;
+
+    [Header("Knockback")]
+    [SerializeField] private float knockbackForce = 3f;
+    [SerializeField] private float knockbackTime = 0.35f;
+
+    private int coins;
+
+    private State currentState = State.Idle;
+
+    private Rigidbody2D rb;
+    private Animator animator;
+
+    private float inputX;
+    private bool jumpPressed;
+    private bool isGrounded;
+
+    private void Awake()
     {
-        move = Input.GetAxisRaw("Horizontal");
-        rb2D.linearVelocity = new Vector2(move * speed, rb2D.linearVelocity.y);
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
-        if(move != 0)
-            transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
-
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        // Para sincronizar UI con GameManager (si existe)
+        if (GameManager2D.Instance != null)
         {
-            rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
+            GameManager2D.Instance.UpdateCoinsUI(coins);
+        }
+    }
+
+    private void Update()
+    {
+        ReadInput();
+
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+
+        // --- COMPORTAMIENTO ---
+        switch (currentState)
+        {
+            case State.Idle: DoIdle(); break;
+            case State.Walking: DoWalking(); break;
+            case State.Jumping: DoJumping(); break;
+            case State.Knockback: DoKnockback(); break;
         }
 
-        animator.SetFloat("Speed", Mathf.Abs(move));
-        animator.SetFloat("VerticalVelocity", rb2D.linearVelocity.y);
-        animator.SetBool("IsGrounded", isGrounded); 
+        // --- TRANSICIONES ---
+        switch (currentState)
+        {
+            case State.Idle:
+                if (Mathf.Abs(inputX) > 0.1f && isGrounded)
+                    currentState = State.Walking;
 
+                if (jumpPressed && isGrounded)
+                {
+                    Jump();
+                    currentState = State.Jumping;
+                }
+                break;
+
+            case State.Walking:
+                if (Mathf.Abs(inputX) <= 0.1f)
+                    currentState = State.Idle;
+
+                if (jumpPressed && isGrounded)
+                {
+                    Jump();
+                    currentState = State.Jumping;
+                }
+                break;
+
+            case State.Jumping:
+                if (isGrounded && rb.linearVelocity.y <= 0.01f)
+                    currentState = Mathf.Abs(inputX) > 0.1f ? State.Walking : State.Idle;
+                break;
+
+            case State.Knockback:
+                // Nada, se controla por corrutina
+                break;
+        }
+
+        // Animaciones
+        animator.SetFloat("Speed", Mathf.Abs(inputX));
+        animator.SetBool("IsGrounded", isGrounded);
+        animator.SetFloat("VerticalVelocity", rb.linearVelocity.y);
     }
 
     private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        if (currentState == State.Knockback)
+            return;
+
+        rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);
+
+        if (inputX != 0)
+            transform.localScale = new Vector3(Mathf.Sign(inputX), 1f, 1f);
     }
-    
-    //Colisiones y asignar contador
+
+    private void ReadInput()
+    {
+        inputX = 0f;
+        jumpPressed = false;
+
+        if (Keyboard.current == null)
+            return;
+
+        if (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed)
+            inputX = -1f;
+        else if (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed)
+            inputX = 1f;
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            jumpPressed = true;
+    }
+
+    private void DoIdle() { }
+    private void DoWalking() { }
+    private void DoJumping() { }
+    private void DoKnockback() { }
+
+    private void Jump()
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Monedas
-        if (collision.transform.CompareTag("Coin"))
+        // COINS
+        if (collision.CompareTag("Coin"))
         {
-            Destroy(collision.gameObject);
             coins++;
-            textCoins.text = coins.ToString();
+            if (GameManager2D.Instance != null)
+                GameManager2D.Instance.UpdateCoinsUI(coins);
+
+            Destroy(collision.gameObject);
         }
 
-        //Pinchos y reiniciar nivel
-
-        if (collision.transform.CompareTag("Spikes"))
+        // SPIKES
+        if (collision.CompareTag("Spikes"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // Llama al GameManager
+            if (GameManager2D.Instance != null)
+                GameManager2D.Instance.KillPlayer();
+            else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        //Colision barril y explosion
-
-        if (collision.transform.CompareTag("Barrel"))
+        // BARREL
+        if (collision.CompareTag("Barrel"))
         {
-            Vector2 knockbackDir=(rb2D.position-(Vector2)collision.transform.position).normalized;
-            rb2D.linearVelocity = Vector2.zero;
-            rb2D.AddForce(knockbackDir*3, ForceMode2D.Impulse);
-
-            BoxCollider2D[] colliders = collision.gameObject.GetComponents<BoxCollider2D>();
-
-            foreach (BoxCollider2D col in colliders)
-            {
-                col.enabled = false;
-            }
-
-            collision.GetComponent<Animator>().enabled=true;
-            Destroy(collision.gameObject, 0.5f);
-
+            StartCoroutine(KnockbackRoutine(collision));
         }
     }
+
+    private System.Collections.IEnumerator KnockbackRoutine(Collider2D collision)
+    {
+        currentState = State.Knockback;
+
+        Vector2 dir = (rb.position - (Vector2)collision.transform.position).normalized;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(dir * knockbackForce, ForceMode2D.Impulse);
+
+        foreach (var col in collision.GetComponents<BoxCollider2D>())
+            col.enabled = false;
+
+        collision.GetComponent<Animator>().enabled = true;
+        Destroy(collision.gameObject, 0.5f);
+
+        yield return new WaitForSeconds(knockbackTime);
+
+        currentState = State.Idle;
+    }
 }
-   
