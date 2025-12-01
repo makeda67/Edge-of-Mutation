@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Spikes
   - Barrel
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -175,6 +175,17 @@ public class PlayerStateMachine2D : MonoBehaviour
             StartCoroutine(KnockbackRoutine(collision));
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (GameManager2D.Instance != null)
+                GameManager2D.Instance.KillPlayer();
+            else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+            
 
     private System.Collections.IEnumerator KnockbackRoutine(Collider2D collision)
     {
