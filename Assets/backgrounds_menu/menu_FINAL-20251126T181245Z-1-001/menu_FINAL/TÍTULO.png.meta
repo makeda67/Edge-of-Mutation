@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: da54d88845d849048b77695a0ff14411
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5292539288504341125
+    second: "T\xCDTULO_0"
+  - first:
+      213: -348092738220227276
+    second: "T\xCDTULO_1"
+  - first:
+      213: -6700761369573461061
+    second: "T\xCDTULO_2"
+  - first:
+      213: -9129468278335178935
+    second: "T\xCDTULO_3"
+  - first:
+      213: -4084115040685671205
+    second: "T\xCDTULO_4"
+  - first:
+      213: -4913036450656181365
+    second: "T\xCDTULO_5"
+  - first:
+      213: -716210847172568217
+    second: "T\xCDTULO_6"
+  - first:
+      213: -4528082027782650288
+    second: "T\xCDTULO_7"
+  - first:
+      213: -8870310484900733373
+    second: "T\xCDTULO_8"
+  - first:
+      213: 4946942170981375238
+    second: "T\xCDTULO_9"
+  - first:
+      213: 2113035700860735202
+    second: "T\xCDTULO_10"
+  - first:
+      213: -8996890040476475071
+    second: "T\xCDTULO_11"
+  - first:
+      213: 4909494480704657656
+    second: "T\xCDTULO_12"
+  - first:
+      213: -8279757436180130926
+    second: "T\xCDTULO_13"
+  - first:
+      213: -6119721333202203822
+    second: "T\xCDTULO_14"
+  - first:
+      213: -4508239359171005639
+    second: "T\xCDTULO_15"
+  - first:
+      213: -55404681841406611
+    second: "T\xCDTULO_16"
+  - first:
+      213: -7077172201460878336
+    second: "T\xCDTULO_17"
+  - first:
+      213: 4007947406349505614
+    second: "T\xCDTULO_18"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "T\xCDTULO_0"
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 1855
+        width: 90
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582991b1170e27940800000000000000
+      internalID: 5292539288504341125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_1"
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1855
+        width: 85
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4358d75bf735b2bf0800000000000000
+      internalID: -348092738220227276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_2"
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 1855
+        width: 85
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3f9e9590d1203a0800000000000000
+      internalID: -6700761369573461061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_3"
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 1855
+        width: 77
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94772a988fc9d4180800000000000000
+      internalID: -9129468278335178935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_4"
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 1855
+        width: 79
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdcb912520f4257c0800000000000000
+      internalID: -4084115040685671205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_5"
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 1855
+        width: 79
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b83a716e06361dbb0800000000000000
+      internalID: -4913036450656181365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_6"
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 1855
+        width: 82
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b5ff577028f06f0800000000000000
+      internalID: -716210847172568217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_7"
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1854
+        width: 85
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0564f24f2650921c0800000000000000
+      internalID: -4528082027782650288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_8"
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 1855
+        width: 79
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e91146c9356e480800000000000000
+      internalID: -8870310484900733373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_9"
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 1659
+        width: 102
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d9eb9c1b117a440800000000000000
+      internalID: 4946942170981375238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_10"
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1660
+        width: 92
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eec58b46c2035d10800000000000000
+      internalID: 2113035700860735202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_11"
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 1660
+        width: 93
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141662efc20a42380800000000000000
+      internalID: -8996890040476475071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_12"
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 1659
+        width: 90
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f85425f737022440800000000000000
+      internalID: 4909494480704657656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_13"
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 1660
+        width: 101
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2939516da74681d80800000000000000
+      internalID: -8279757436180130926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_14"
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1660
+        width: 107
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b4a120fd1621ba0800000000000000
+      internalID: -6119721333202203822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_15"
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 1660
+        width: 101
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9337d2240348f61c0800000000000000
+      internalID: -4508239359171005639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_16"
+      rect:
+        serializedVersion: 2
+        x: 2212
+        y: 1660
+        width: 86
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6d03f34cb92b3ff0800000000000000
+      internalID: -55404681841406611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_17"
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 1659
+        width: 102
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004b7a51165d8cd90800000000000000
+      internalID: -7077172201460878336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\xCDTULO_18"
+      rect:
+        serializedVersion: 2
+        x: 2428
+        y: 1660
+        width: 90
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4419e95ee61f9730800000000000000
+      internalID: 4007947406349505614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "T\xCDTULO_0": 5292539288504341125
+      "T\xCDTULO_1": -348092738220227276
+      "T\xCDTULO_10": 2113035700860735202
+      "T\xCDTULO_11": -8996890040476475071
+      "T\xCDTULO_12": 4909494480704657656
+      "T\xCDTULO_13": -8279757436180130926
+      "T\xCDTULO_14": -6119721333202203822
+      "T\xCDTULO_15": -4508239359171005639
+      "T\xCDTULO_16": -55404681841406611
+      "T\xCDTULO_17": -7077172201460878336
+      "T\xCDTULO_18": 4007947406349505614
+      "T\xCDTULO_2": -6700761369573461061
+      "T\xCDTULO_3": -9129468278335178935
+      "T\xCDTULO_4": -4084115040685671205
+      "T\xCDTULO_5": -4913036450656181365
+      "T\xCDTULO_6": -716210847172568217
+      "T\xCDTULO_7": -4528082027782650288
+      "T\xCDTULO_8": -8870310484900733373
+      "T\xCDTULO_9": 4946942170981375238
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
