@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -10,7 +10,8 @@ public class PlayerStateMachine2D : MonoBehaviour
         Idle,
         Walking,
         Jumping,
-        Knockback
+        Knockback,
+        Attacking   
     }
 
     [Header("Movement")]
@@ -21,6 +22,9 @@ public class PlayerStateMachine2D : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundRadius = 0.1f;
     [SerializeField] private LayerMask groundLayer;
+
+    [Header("Attack")]
+    [SerializeField] private float attackDuration = 0.25f; 
 
     [Header("Coins")]
     [SerializeField] private TMP_Text textCoins;
@@ -38,6 +42,7 @@ public class PlayerStateMachine2D : MonoBehaviour
 
     private float inputX;
     private bool jumpPressed;
+    private bool attackPressed;
     private bool isGrounded;
 
     private void Awake()
@@ -45,7 +50,6 @@ public class PlayerStateMachine2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        // Para sincronizar UI con GameManager (si existe)
         if (GameManager2D.Instance != null)
         {
             GameManager2D.Instance.UpdateCoinsUI(coins);
@@ -65,12 +69,16 @@ public class PlayerStateMachine2D : MonoBehaviour
             case State.Walking: DoWalking(); break;
             case State.Jumping: DoJumping(); break;
             case State.Knockback: DoKnockback(); break;
+            case State.Attacking: DoAttacking(); break; // ← NUEVO
         }
 
         // --- TRANSICIONES ---
         switch (currentState)
         {
             case State.Idle:
+                if (attackPressed && isGrounded)
+                    StartCoroutine(AttackRoutine());
+
                 if (Mathf.Abs(inputX) > 0.1f && isGrounded)
                     currentState = State.Walking;
 
@@ -82,6 +90,9 @@ public class PlayerStateMachine2D : MonoBehaviour
                 break;
 
             case State.Walking:
+                if (attackPressed && isGrounded)
+                    StartCoroutine(AttackRoutine());
+
                 if (Mathf.Abs(inputX) <= 0.1f)
                     currentState = State.Idle;
 
@@ -98,8 +109,10 @@ public class PlayerStateMachine2D : MonoBehaviour
                 break;
 
             case State.Knockback:
-                // Nada, se controla por corrutina
                 break;
+
+            case State.Attacking:
+                break; 
         }
 
         // Animaciones
@@ -110,8 +123,8 @@ public class PlayerStateMachine2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (currentState == State.Knockback)
-            return;
+        if (currentState == State.Knockback || currentState == State.Attacking)
+            return; // NO moverse mientras golpea
 
         rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);
 
@@ -123,6 +136,7 @@ public class PlayerStateMachine2D : MonoBehaviour
     {
         inputX = 0f;
         jumpPressed = false;
+        attackPressed = false;
 
         if (Keyboard.current == null)
             return;
@@ -134,12 +148,16 @@ public class PlayerStateMachine2D : MonoBehaviour
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
             jumpPressed = true;
+
+        if (Keyboard.current.kKey.wasPressedThisFrame)
+            attackPressed = true;   
     }
 
     private void DoIdle() { }
     private void DoWalking() { }
     private void DoJumping() { }
     private void DoKnockback() { }
+    private void DoAttacking() { } 
 
     private void Jump()
     {
@@ -147,9 +165,23 @@ public class PlayerStateMachine2D : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
+    // --- ATAQUE ---
+    private System.Collections.IEnumerator AttackRoutine()
+    {
+        currentState = State.Attacking;
+        animator.SetTrigger("Attack 2");
+
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y); // Quieto
+
+        yield return new WaitForSeconds(attackDuration);
+
+        currentState = isGrounded ?
+            (Mathf.Abs(inputX) > 0.1f ? State.Walking : State.Idle)
+            : State.Jumping;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // COINS
         if (collision.CompareTag("Coin"))
         {
             coins++;
@@ -159,22 +191,20 @@ public class PlayerStateMachine2D : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        // SPIKES
         if (collision.CompareTag("Spikes"))
         {
-            // Llama al GameManager
             if (GameManager2D.Instance != null)
                 GameManager2D.Instance.KillPlayer();
             else
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        // BARREL
         if (collision.CompareTag("Barrel"))
         {
             StartCoroutine(KnockbackRoutine(collision));
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -185,7 +215,6 @@ public class PlayerStateMachine2D : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-            
 
     private System.Collections.IEnumerator KnockbackRoutine(Collider2D collision)
     {
