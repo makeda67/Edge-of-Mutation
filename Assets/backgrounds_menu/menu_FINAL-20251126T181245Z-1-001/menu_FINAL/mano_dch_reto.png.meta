@@ -1,64 +1,10 @@
 fileFormatVersion: 2
-guid: da54d88845d849048b77695a0ff14411
+guid: 9cd56189292bd554a973e34f1bd44ce2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5292539288504341125
-    second: "T\xCDTULO_0"
-  - first:
-      213: -348092738220227276
-    second: "T\xCDTULO_1"
-  - first:
-      213: -6700761369573461061
-    second: "T\xCDTULO_2"
-  - first:
-      213: -9129468278335178935
-    second: "T\xCDTULO_3"
-  - first:
-      213: -4084115040685671205
-    second: "T\xCDTULO_4"
-  - first:
-      213: -4913036450656181365
-    second: "T\xCDTULO_5"
-  - first:
-      213: -716210847172568217
-    second: "T\xCDTULO_6"
-  - first:
-      213: -4528082027782650288
-    second: "T\xCDTULO_7"
-  - first:
-      213: -8870310484900733373
-    second: "T\xCDTULO_8"
-  - first:
-      213: 4946942170981375238
-    second: "T\xCDTULO_9"
-  - first:
-      213: 2113035700860735202
-    second: "T\xCDTULO_10"
-  - first:
-      213: -8996890040476475071
-    second: "T\xCDTULO_11"
-  - first:
-      213: 4909494480704657656
-    second: "T\xCDTULO_12"
-  - first:
-      213: -8279757436180130926
-    second: "T\xCDTULO_13"
-  - first:
-      213: -6119721333202203822
-    second: "T\xCDTULO_14"
-  - first:
-      213: -4508239359171005639
-    second: "T\xCDTULO_15"
-  - first:
-      213: -55404681841406611
-    second: "T\xCDTULO_16"
-  - first:
-      213: -7077172201460878336
-    second: "T\xCDTULO_17"
-  - first:
-      213: 4007947406349505614
-    second: "T\xCDTULO_18"
+      213: -483917329052248356
+    second: mano_dch_reto_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -180,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "T\xCDTULO_0"
+      name: mano_dch_reto_0
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1620
-        width: 1280
-        height: 540
+        x: 1574
+        y: 32
+        width: 2230
+        height: 1445
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 582991b1170e27940800000000000000
-      internalID: 5292539288504341125
+      spriteID: cd65f2dc0c7c849f0800000000000000
+      internalID: -483917329052248356
       vertices: []
       indices: 
       edges: []
@@ -205,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 623d09071e0f6b24eb1c34d1a0527131
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -215,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "T\xCDTULO_0": 5292539288504341125
+      mano_dch_reto_0: -483917329052248356
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
